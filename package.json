@@ -1,0 +1,19 @@
+{
+  "name": "zenius",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron . --no-sandbox --disable-gpu --disable-software-rasterizer"
+  },
+  "devDependencies": {
+    "electron": "^40.2.1"
+  },
+  "dependencies": {
+    "sequelize": "^6.37.7",
+    "sqlite3": "^5.1.7"
+  }
+}
