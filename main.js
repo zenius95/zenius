@@ -1,4 +1,15 @@
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, ipcMain } = require('electron');
+const path = require('path');
+
+// Load biến môi trường theo nền tảng
+const envFile = process.platform === 'linux' ? '.env.linux' : '.env.windows';
+require('dotenv').config({ path: path.join(__dirname, envFile) });
+
+// Chỉ Linux mới dùng USER_DATA_DIR tùy chỉnh
+if (process.platform === 'linux' && process.env.USER_DATA_DIR) {
+    app.setPath('userData', process.env.USER_DATA_DIR);
+    console.log(`[ENV] userData path set to: ${process.env.USER_DATA_DIR}`);
+}
 
 function createWindow() {
     const win = new BrowserWindow({

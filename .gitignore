@@ -1,2 +1,4 @@
 node_modules
 zenius.sqlite
+.env.windows
+.env.linux
